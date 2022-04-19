@@ -1,0 +1,7 @@
+<ul class="nav nav-tabs">
+    {% for item in categories %}
+        <li class="nav-item">
+            <a href="{{ item.get_absolute_url }}" class="nav-link">{{ item.title }} <span class="badge badge-primary badge-pill">{{ item.cnt }}</span></a>
+        </li>
+    {% endfor %}
+</ul>

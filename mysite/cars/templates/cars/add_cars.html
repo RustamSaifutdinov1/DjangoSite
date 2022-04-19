@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Добавление новости
+{% endblock %}
+
+
+{% block content %}
+
+<h1 style="text-align: center">Добавление новости</h1>
+
+<form action="{% url 'add_news' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary btn-block">Добавить новость</button>
+</form>
+
+{% endblock %}
