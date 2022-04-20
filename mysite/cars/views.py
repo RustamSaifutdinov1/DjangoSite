@@ -26,6 +26,8 @@ def register(request):
 
 
 def user_login(request):
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
     if request.method == 'POST':
         form = UserLoginForm(data=request.POST)
         if form.is_valid():
@@ -34,7 +36,7 @@ def user_login(request):
             return redirect('home')
     else:
         form = UserLoginForm()
-    return render(request, 'cars/login.html', {"form": form})
+    return render(request, 'cars/login.html', {"form": form, 'num_visits': num_visits})
 
 
 def user_logout(request):

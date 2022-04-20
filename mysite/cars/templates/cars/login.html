@@ -8,12 +8,12 @@ Login
 
 {% block content %}
 
-<h1 style="text-align: center">Вход</h1>
+<h1 style="text-align: center">Вход </h1>
 
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn btn-primary btn-block">Login</button>
 </form>
-
+<h6>Количество посещений = {{ num_visits }}</h6>
 {% endblock %}
